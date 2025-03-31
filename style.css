@@ -594,3 +594,105 @@ h3 {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 210, 255, 0.2);
 }
+
+/* Contact Form Styles */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus::placeholder {
+    transform: translateX(10px);
+    opacity: 0.3;
+}
+
+.form-control {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+    border-color: rgba(0, 210, 255, 0.3);
+    background-color: rgba(33, 37, 41, 0.9) !important;
+}
+
+.form-control:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hover-effect:hover {
+    color: #00d2ff !important;
+    transition: color 0.3s ease;
+}
+
+/* Footer Styles */
+.footer-content {
+    position: relative;
+}
+
+.footer-content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.footer-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #00d2ff;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-social .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.footer-copyright a {
+    position: relative;
+    font-weight: 500;
+}
+
+.footer-copyright a:hover {
+    color: #00d2ff !important;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
