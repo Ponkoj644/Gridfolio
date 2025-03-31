@@ -483,6 +483,23 @@ h3 {
   font-size: 0.85rem;
 }
 
+/* Feature Cards icon styles */
+.web_design .card .bi,
+.responsive_design .card .bi,
+.clean_code .card.bi,
+.certification .card .bi, .testimonials .card .bi-quote {
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.web_design .card:hover .bi,
+.responsive_design .card:hover .bi,
+.clean_code .card:hover .bi,
+.certification .card:hover .bi, .testimonials .card:hover .bi-quote {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
 /* Timeline Styles */
 .timeline {
   position: relative;
