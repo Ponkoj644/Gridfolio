@@ -251,13 +251,13 @@ h3 {
   transform: translateY(1px);
 }
 
-/* Project Detais btn */
+/* Project Details btn */
 .project-link {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   font-size: 0.9rem;
   position: relative;
-  padding-bottom: 6px; /* Increased padding between text and border */
+  padding-bottom: 6px;
 }
 
 .project-link::after {
@@ -265,10 +265,18 @@ h3 {
   position: absolute;
   width: 0;
   height: 1px;
-  bottom: 2px; /* Adjusted position of the border */
+  bottom: 2px;
   left: 0;
-  background-color: #ffffff;
+  background-color: var(--primary);
   transition: width 0.3s ease-in-out;
+}
+
+.project-link:hover {
+  color: var(--primary);
+}
+
+.project-link:hover i {
+  color: var(--primary);
 }
 
 .project-link:hover::after {
