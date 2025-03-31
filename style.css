@@ -60,6 +60,15 @@ body {
   color: #a0a0a0;
 }
 
+.business-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
 /* Profile Card */
 .profile-card {
   grid-column: span 4;
@@ -280,21 +289,103 @@ h3 {
 /* Skills */
 
 .progress {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
 }
 
 .progress-bar {
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
-    border-radius: 4px;
-    transition: width 1.5s ease-in-out;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #00d2ff 0%,
+    #3a7bd5 100%
+  ); /* Restored original gradient */
+  border-radius: 20px;
+  transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  box-shadow: 0 0 10px rgba(58, 123, 213, 0.5); /* Adjusted shadow color to match */
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .skill-item span {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
 }
+
+/* Sidebar for Work category */
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.category-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    color: white;
+}
+
+.project-count {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.category-item:hover .project-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.category-item i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.category-item:hover i {
+    color: white;
+    transform: scale(1.1);
+}
+
+
