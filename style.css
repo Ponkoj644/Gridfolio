@@ -1,3 +1,14 @@
+/* Root variables */
+:root {
+  --primary: #00d2ff;
+  --primary-dark: #3a7bd5;
+  --tertiary: #1a1a1a;
+  --tertiary-dark: #2c3e50;
+  --white: #ffffff;
+
+  /* --bg_primary: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%); */
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -96,6 +107,7 @@ body {
     padding: 0.5rem 1rem;
     width: 100%;
     margin-top: 0.5rem;
+    text-align: left;
   }
 }
 
@@ -180,6 +192,15 @@ h3 {
 }
 
 /* Button Styles */
+.card-body .btn i {
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.card-body .btn:hover i {
+  color: var(--white);
+}
+
 .card-body .btn {
   padding: 0.8rem 1.5rem;
   font-weight: 500;
@@ -505,194 +526,199 @@ h3 {
 
 /* Testimonial Styles */
 .testimonial-slider {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .testimonial-items {
-    display: flex;
-    transition: transform 0.5s ease;
+  display: flex;
+  transition: transform 0.5s ease;
 }
 
 .testimonial-item {
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .testimonial-item.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .slider-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .nav-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .nav-dot.active {
-    background: #00d2ff;
-    transform: scale(1.2);
+  background: #00d2ff;
+  transform: scale(1.2);
 }
 .testimonial-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin: 1rem 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .testimonial-item:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .review-text {
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .reviewer-name {
-    color: #00d2ff;
-    font-size: 1.1rem;
-    font-weight: 600;
+  color: #00d2ff;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .rating i {
-    margin: 0 2px;
-    font-size: 0.9rem;
+  margin: 0 2px;
+  font-size: 0.9rem;
 }
 
 .client-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .testimonial-item:hover .client-image {
-    border-color: rgba(0, 210, 255, 0.3);
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.2);
+  border-color: rgba(0, 210, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.2);
 }
 
 /* Contact Form Styles */
 .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.5) !important;
-    font-style: italic;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
 .form-control:focus::placeholder {
-    transform: translateX(10px);
-    opacity: 0.3;
+  transform: translateX(10px);
+  opacity: 0.3;
 }
 
 .form-control {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .form-control:focus {
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
-    border-color: rgba(0, 210, 255, 0.3);
-    background-color: rgba(33, 37, 41, 0.9) !important;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+  border-color: rgba(0, 210, 255, 0.3);
+  background-color: rgba(33, 37, 41, 0.9) !important;
 }
 
 .form-control:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .hover-effect:hover {
-    color: #00d2ff !important;
-    transition: color 0.3s ease;
+  color: #00d2ff !important;
+  transition: color 0.3s ease;
 }
 
 /* Footer Styles */
 .footer-content {
-    position: relative;
+  position: relative;
 }
 
 .footer-content::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
 }
 
 .footer-links a {
-    position: relative;
-    transition: all 0.3s ease;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .footer-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: #00d2ff;
-    transition: all 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #00d2ff;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .footer-social .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .footer-copyright a {
-    position: relative;
-    font-weight: 500;
+  position: relative;
+  font-weight: 500;
 }
 
 .footer-copyright a:hover {
-    color: #00d2ff !important;
+  color: #00d2ff !important;
 }
 
 .back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    z-index: 999;
-    transition: all 0.3s ease;
-    opacity: 0.8;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 999;
+  transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
 .back-to-top:hover {
-    transform: translateY(-3px);
-    opacity: 1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
