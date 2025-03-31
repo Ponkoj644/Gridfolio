@@ -55,4 +55,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Testimonial Slider
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.testimonial-item');
+    const dots = document.querySelectorAll('.nav-dot');
+    let currentSlide = 0;
+
+    // Show first slide
+    items[0].classList.add('active');
+
+    // Handle dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+
+    function showSlide(index) {
+        // Remove active class from current
+        items[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        // Add active class to new
+        currentSlide = index;
+        items[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+
+        // Move slider
+        const slider = document.querySelector('.testimonial-items');
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        let nextSlide = (currentSlide + 1) % items.length;
+        showSlide(nextSlide);
+    }, 5000);
+});
+
 console.log("Grid Folio");
