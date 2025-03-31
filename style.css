@@ -425,7 +425,7 @@ h3 {
 }
 
 .category-item:hover i {
-  color: white;
+  color: var(--primary);
   transform: scale(1.1);
 }
 
