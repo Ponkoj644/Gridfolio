@@ -57,40 +57,107 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Testimonial Slider
 document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.testimonial-items');
     const items = document.querySelectorAll('.testimonial-item');
     const dots = document.querySelectorAll('.nav-dot');
     let currentSlide = 0;
+    let startX, moveX;
+    let isDragging = false;
+    let autoSlideInterval;
+
+    // Mouse events
+    slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        slider.style.cursor = 'grabbing';
+        clearInterval(autoSlideInterval);
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        moveX = e.clientX;
+        const diff = moveX - startX;
+        slider.style.transform = `translateX(calc(-${currentSlide * 100}% + ${diff}px))`;
+        e.preventDefault();
+    });
+
+    slider.addEventListener('mouseup', handleDragEnd);
+    slider.addEventListener('mouseleave', handleDragEnd);
+
+    // Touch events
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        clearInterval(autoSlideInterval);
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        if (!startX) return;
+        moveX = e.touches[0].clientX;
+        const diff = moveX - startX;
+        slider.style.transform = `translateX(calc(-${currentSlide * 100}% + ${diff}px))`;
+        e.preventDefault();
+    });
+
+    slider.addEventListener('touchend', handleDragEnd);
+
+    function handleDragEnd() {
+        if (!startX || !moveX) return;
+        
+        const diff = moveX - startX;
+        const threshold = window.innerWidth * 0.2;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0 && currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            } else if (diff < 0 && currentSlide < items.length - 1) {
+                showSlide(currentSlide + 1);
+            } else {
+                showSlide(currentSlide);
+            }
+        } else {
+            showSlide(currentSlide);
+        }
+
+        startX = null;
+        moveX = null;
+        isDragging = false;
+        slider.style.cursor = 'grab';
+        startAutoSlide();
+    }
 
     // Show first slide
     items[0].classList.add('active');
+    slider.style.cursor = 'grab';
 
     // Handle dot navigation
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showSlide(index);
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
         });
     });
 
     function showSlide(index) {
-        // Remove active class from current
         items[currentSlide].classList.remove('active');
         dots[currentSlide].classList.remove('active');
 
-        // Add active class to new
         currentSlide = index;
         items[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
 
-        // Move slider
-        const slider = document.querySelector('.testimonial-items');
         slider.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
-    // Auto slide every 5 seconds
-    setInterval(() => {
-        let nextSlide = (currentSlide + 1) % items.length;
-        showSlide(nextSlide);
-    }, 5000);
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            let nextSlide = (currentSlide + 1) % items.length;
+            showSlide(nextSlide);
+        }, 5000);
+    }
+
+    // Start auto-sliding
+    startAutoSlide();
 });
 
 console.log("Grid Folio");
