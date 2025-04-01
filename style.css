@@ -430,6 +430,23 @@ h3 {
 }
 
 /* Project Card Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-item .row > div {
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-item .row > div:last-child {
+    margin-bottom: 0rem;
+  }
+
+  .project-image-wrapper {
+    height: 220px;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+}
 .project-row {
   display: flex;
   flex-wrap: wrap;
@@ -853,5 +870,3 @@ h3 {
 .tech-stack .badge:hover {
   opacity: 1;
 }
-
-
