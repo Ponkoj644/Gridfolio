@@ -487,7 +487,8 @@ h3 {
 .web_design .card .bi,
 .responsive_design .card .bi,
 .clean_code .card.bi,
-.certification .card .bi, .testimonials .card .bi-quote {
+.certification .card .bi,
+.testimonials .card .bi-quote {
   color: var(--white);
   transition: all 0.3s ease;
 }
@@ -495,7 +496,8 @@ h3 {
 .web_design .card:hover .bi,
 .responsive_design .card:hover .bi,
 .clean_code .card:hover .bi,
-.certification .card:hover .bi, .testimonials .card:hover .bi-quote {
+.certification .card:hover .bi,
+.testimonials .card:hover .bi-quote {
   color: var(--primary);
   transform: scale(1.1);
 }
@@ -747,3 +749,4 @@ h3 {
   opacity: 1;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+

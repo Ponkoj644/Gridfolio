@@ -166,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Back to Top Button
 const backToTopButton = document.getElementById("backToTop");
-
 window.onscroll = function () {
   if (
     document.body.scrollTop > 300 ||
