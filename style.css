@@ -692,6 +692,133 @@ h3 {
   box-shadow: 0 6px 20px rgba(0, 210, 255, 0.2);
 }
 
+/* Contact Page Styles */
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--primary) !important;
+}
+
+.contact-info a:hover + .contact-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  color: var(--primary);
+}
+
+.social-item i {
+  font-size: 1.5rem;
+}
+
+/* Contact Page Form Styles */
+.contact-form .form-control {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  color: var(--white);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.contact-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+.contact-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form .btn-dark {
+  background: linear-gradient(45deg, var(--tertiary), var(--tertiary-dark));
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .btn-dark:hover {
+  background: linear-gradient(45deg, var(--tertiary-dark), var(--tertiary));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-floating > .form-control {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: calc(3.5rem + 2px);
+  line-height: 1.25;
+}
+
+.form-floating > textarea.form-control {
+  height: 150px !important;
+}
+
+.form-floating > .form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 210, 255, 0.25);
+}
+
+.form-floating > .form-control::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-floating > label {
+  padding: 1rem 0.75rem;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Contact Form Styles */
 .form-control::placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
